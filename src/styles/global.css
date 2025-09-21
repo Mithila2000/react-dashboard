@@ -1,0 +1,12 @@
+@import './reset.css';
+@import './theme.css';
+
+.card:hover::after{
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background: radial-gradient(600px 120px at var(--x, 0) var(--y, 0), rgba(64,88,255,.10), transparent 60%);
+  transition: opacity .2s ease;
+}
+.card { transition: transform .18s ease; }
+.card:active { transform: translateY(1px); }
+.fade-in { animation: fade .35s ease both; }
+@keyframes fade { from {opacity:0; transform: translateY(6px)} to {opacity:1; transform:none} }
